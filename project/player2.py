@@ -1,19 +1,22 @@
 import pygame
 from settings import Settings
 
-class Wall():
+class Player2():
     def __init__(self, screen):
         self.screen=screen
 
-        self.image = pygame.image.load("images/wall2.png")
-        self.image=pygame.transform.scale(self.image, (100,300))
+        self.image = pygame.image.load("images/player2.png")
+        self.image=pygame.transform.scale(self.image, (50,150))
         self.rect=self.image.get_rect()
         self.screen_rect=self.screen.get_rect()
 
         self.rect.left=self.screen_rect.left
-        self.rect.centery=self.screen_rect.centery
+        self.rect.bottom=self.screen_rect.bottom
 
 
+
+        self.moving_r = False
+        self.moving_l =  False
         self.moving_d = False
         self.moving_u = False
 
@@ -21,12 +24,12 @@ class Wall():
         self.screen.blit(self.image, self.rect)
 
     def update(self):
-       # if self.moving_right and self.rect.right<self.screen_rect.right:
-       #      self.rect.centerx += 5
-       # if self.moving_left and self.rect.left > 0:
-       #     self.rect.centerx -= 5
+        if self.moving_r and self.rect.right<self.screen_rect.right:
+            self.rect.centerx += 2
+        if self.moving_l and self.rect.left > 0:
+            self.rect.centerx -= 2
         if self.moving_d and self.rect.bottom < self.screen_rect.bottom:
-            self.rect.bottom += 5
+            self.rect.bottom += 2
         if self.moving_u and self.rect.top > 0:
-            self.rect.bottom -= 5
+            self.rect.bottom -= 2
 

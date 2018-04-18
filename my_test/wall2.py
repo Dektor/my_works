@@ -12,8 +12,7 @@ class Wall2():
         self.rect.right=self.screen_rect.right
         self.rect.centery=self.screen_rect.centery
 
-        #self.moving_r = False
-        #self.moving_l =  False
+
         self.moving_down = False
         self.moving_up = False
 
