@@ -11,19 +11,17 @@ def check_events(game_settings, player1 , player2 ,screen):
             if event.key == pygame.K_LEFT:
                 player1.moving_left = True
             if event.key == pygame.K_UP:
-                player1.moving_up= True
+                player1.jump = True
             if event.key == pygame.K_DOWN:
-                player1.moving_down= True
+                player1.sit_down = True
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 player1.moving_right = False
             if event.key == pygame.K_LEFT:
-                player1.moving_left= False
-            if event.key == pygame.K_UP:
-                player1.moving_up = False
+                player1.moving_left = False
             if event.key == pygame.K_DOWN:
-                player1.moving_down = False
+                player1.sit_down = False
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_d:
@@ -31,19 +29,20 @@ def check_events(game_settings, player1 , player2 ,screen):
             if event.key == pygame.K_a:
                 player2.moving_l = True
             if event.key == pygame.K_w:
-                player2.moving_u= True
+                player2.jump = True
             if event.key == pygame.K_s:
-                player2.moving_d= True
+                player2.sit_down = True
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_d:
                 player2.moving_r = False
             if event.key == pygame.K_a:
-                player2.moving_l= False
-            if event.key == pygame.K_w:
-                player2.moving_u = False
+                player2.moving_l = False
             if event.key == pygame.K_s:
-                player2.moving_d = False
+                player2.sit_down = False
+
+
+
 
 
 

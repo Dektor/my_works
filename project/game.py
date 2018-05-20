@@ -18,6 +18,7 @@ def init_game():
 
 
     while True:
+       pygame.time.delay(30)
        g_f.check_events(game_settings, player1, player2 , screen)
        g_f.update_screen(screen, game_settings,player1, player2)
        player1.update()
